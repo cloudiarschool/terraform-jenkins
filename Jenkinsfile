@@ -6,8 +6,10 @@ pipeline {
   stages {
     stage('Initialize the terraform and create dev environment') {
       steps {
-        sh "terraform workspace new dev"
+        sh returnStatus: true, script: "terraform workspace new dev"
         sh "terraform init"
+        sh "terraform workspace new dev"
+
       }
     }
   }
