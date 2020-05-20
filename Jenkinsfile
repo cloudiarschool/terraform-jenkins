@@ -4,8 +4,9 @@ pipeline {
     PATH = "${PATH}:${getTerraformPath()}"
   }
   stages {
-    stage('Initialize the terraform') {
+    stage('Initialize the terraform and create dev environment') {
       steps {
+        sh "terraform workspace new dev"
         sh "terraform init"
       }
     }
