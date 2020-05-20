@@ -7,7 +7,7 @@ pipeline {
     stage('S3 Bucket Create'){
       steps {
         script{
-          createS3Bucket('cloudiarterraform')1
+          createS3Bucket('cloudiarterraform')
         }
       }
     }
